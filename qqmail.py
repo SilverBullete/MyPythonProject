@@ -65,13 +65,9 @@ password = ""
 email = ""
 title = ""
 content = ""
-try:
-    cookies = login(username, password)
-    fresh(cookies)
-    sleep(2)
-    sendEmail(email, title, content)
-finally:
-    if driver._is_remote:
-        driver.close()
-        driver.quit()
-pass
+cookies = login(username, password)
+fresh(cookies)
+sleep(2)
+sendEmail(email, title, content)
+driver.close()
+driver.quit()
